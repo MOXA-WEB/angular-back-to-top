@@ -3,13 +3,7 @@
 angular.module('zkBackToTop', [])
   .directive('zkBackToTop', function ($document) {
     return {
-      template: '<div class="zk-back-to-top hide">' +
-                    '<div class="zk-back-to-top__btn">' +
-                        '<div class="zk-back-to-top__btn--head"></div>' +
-                        '<div class="zk-back-to-top__btn--tail"></div>' +
-                    '</div>' +
-                '</div>',
-      restrict: 'EA',
+      restrict: 'A',
       replace: true,
       link: function postLink(scope, element, attrs) {
         /*
