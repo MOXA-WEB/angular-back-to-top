@@ -7,7 +7,6 @@ angular.module('zkBackToTop', [])
       scope: {
         scrollBtnId: '@'
       },
-      replace: true,
       link: function postLink(scope, element, attrs) {
 
         /*
