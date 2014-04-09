@@ -64,10 +64,10 @@ angular.module('zkBackToTop', [])
 
             element[0].scrollTop = (easedT * (Y - from)) + from;
 
-            if(time < 1) {
+            if (time < 1) {
               requestAnimationFrame(scroll);
             } else {
-              if(callback) {
+              if (callback) {
                 callback();
               }
             }
