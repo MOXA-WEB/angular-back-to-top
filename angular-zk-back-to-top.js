@@ -48,7 +48,9 @@ angular.module('zkBackToTop', [])
               from = element[0].scrollTop;
 
           if (from === Y) {
-            callback();
+            if (angular.isFunction(callback)) {
+                callback();
+            }
             return; /* Prevent scrolling to the Y point if already there */
           }
 
@@ -67,7 +69,7 @@ angular.module('zkBackToTop', [])
             if (time < 1) {
               requestAnimationFrame(scroll);
             } else {
-              if (callback) {
+              if (angular.isFunction(callback)) {
                 callback();
               }
             }
