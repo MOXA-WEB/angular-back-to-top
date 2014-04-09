@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('zkBackToTop', [])
-  .directive('zkBackToTop', function () {
+  .directive('zkBackToTop', function ($document) {
     return {
       template: '<div class="zk-back-to-top hide">' +
                     '<div class="zk-back-to-top__btn">' +
