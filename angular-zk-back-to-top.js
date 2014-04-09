@@ -45,8 +45,7 @@ angular.module('zkBackToTop', [])
 
         var scrollTo = function(Y, duration, easingFunction, callback) {
           var start = Date.now(),
-              elem = document.documentElement.scrollTop?document.documentElement:document.body,
-              from = elem.scrollTop;
+              from = element[0].scrollTop;
 
           if (from === Y) {
             callback();
@@ -63,7 +62,7 @@ angular.module('zkBackToTop', [])
                 time = min(1, ((currentTime - start) / duration)),
                 easedT = easingFunction(time);
 
-            elem.scrollTop = (easedT * (Y - from)) + from;
+            element[0].scrollTop = (easedT * (Y - from)) + from;
 
             if(time < 1) {
               requestAnimationFrame(scroll);
