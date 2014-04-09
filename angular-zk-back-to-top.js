@@ -9,6 +9,7 @@ angular.module('zkBackToTop', [])
       },
       replace: true,
       link: function postLink(scope, element, attrs) {
+
         /*
          * Easing Functions - inspired from http://gizma.com/easing/
          * only considering the t value for the range [0, 1] => [0, 1]
@@ -47,13 +48,13 @@ angular.module('zkBackToTop', [])
               elem = document.documentElement.scrollTop?document.documentElement:document.body,
               from = elem.scrollTop;
 
-          if(from === Y) {
+          if (from === Y) {
             callback();
             return; /* Prevent scrolling to the Y point if already there */
           }
 
           function min(a,b) {
-            return a<b?a:b;
+            return a < b ? a : b;
           }
 
           function scroll(timestamp) {
