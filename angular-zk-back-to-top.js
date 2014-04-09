@@ -4,6 +4,9 @@ angular.module('zkBackToTop', [])
   .directive('zkBackToTop', function ($document) {
     return {
       restrict: 'A',
+      scope: {
+        scrollBtnId: '@'
+      },
       replace: true,
       link: function postLink(scope, element, attrs) {
         /*
