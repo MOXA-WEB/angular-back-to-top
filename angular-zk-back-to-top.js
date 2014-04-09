@@ -44,6 +44,7 @@ angular.module('zkBackToTop', [])
         }
 
         var scrollTo = function(Y, duration, easingFunction, callback) {
+
           var start = Date.now(),
               from = element[0].scrollTop;
 
@@ -54,7 +55,7 @@ angular.module('zkBackToTop', [])
             return; /* Prevent scrolling to the Y point if already there */
           }
 
-          function min(a,b) {
+          function min(a, b) {
             return a < b ? a : b;
           }
 
