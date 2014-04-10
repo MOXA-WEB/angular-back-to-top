@@ -87,7 +87,7 @@ angular.module('zkBackToTop', [])
 
           if (from === Y) {
             if (angular.isFunction(callback)) {
-                callback();
+              callback();
             }
             return; /* Prevent scrolling to the Y point if already there */
           }
