@@ -78,11 +78,12 @@ angular.module('zkBackToTop', [])
       replace: true,
       link: function postLink(scope, element, attrs) {
 
+        var triggerElement = angular.element($document.find('#' + scope.triggerElemId));
 
         var scrollTo = function(Y, duration, easingFunction, callback) {
 
           var start = Date.now(),
-              from = element[0].scrollTop;
+              from = triggerElement[0].scrollTop;
 
           if (from === Y) {
             if (angular.isFunction(callback)) {
@@ -101,7 +102,7 @@ angular.module('zkBackToTop', [])
                 time = min(1, ((currentTime - start) / duration)),
                 easedT = easingFunction(time);
 
-            element[0].scrollTop = (easedT * (Y - from)) + from;
+            triggerElement[0].scrollTop = (easedT * (Y - from)) + from;
 
             if (time < 1) {
               requestAnimationFrame(scroll);
@@ -117,10 +118,10 @@ angular.module('zkBackToTop', [])
 
         var btn = angular.element($document.find('#' + scope.scrollBtnId));
 
-        element
+        triggerElement
           .on('scroll', function() {
 
-            var pos = element[0].scrollTop;
+            var pos = triggerElement[0].scrollTop;
 
             if (pos > 100) {
               if (btn.hasClass('hide')) {
