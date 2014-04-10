@@ -116,26 +116,23 @@ angular.module('zkBackToTop', [])
           requestAnimationFrame(scroll)
         };
 
-        var btn = angular.element($document.find('#' + scope.scrollBtnId));
-
         triggerElement
           .on('scroll', function() {
 
             var pos = triggerElement[0].scrollTop;
 
             if (pos > 100) {
-              if (btn.hasClass('hide')) {
-                btn.removeClass('hide');
+              if (element.hasClass('hide')) {
+                element.removeClass('hide');
               }
             } else {
-              if (!element.hasClass('hide')) {
-                btn.addClass('hide');
+              if (! element.hasClass('hide')) {
+                element.addClass('hide');
               }
             }
           });
 
-          btn
-          .on('click', function() {
+          element.on('click', function() {
             scrollTo(0, 500, ZkEasingFactory.easeInQuad);
           });
       }
